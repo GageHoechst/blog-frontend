@@ -16,11 +16,12 @@ function PostsNew() {
   );
 }
 
-function PostsIndex() {
+function PostsIndex(props) {
+  console.log("The props are", props);
   return (
     <div id="posts-index">
       <h1>Gamera</h1>
-      <body>Giant turtle who can fly.</body>
+      <p>The name is {props.name} </p>
       <img src="" alt="" />
     </div>
   );
@@ -36,10 +37,11 @@ function Footer() {
   );
 }
 function Content() {
+  let name = "Test";
   return (
     <>
       <PostsNew />
-      <PostsIndex />
+      <PostsIndex name={name} />
     </>
   );
 }
