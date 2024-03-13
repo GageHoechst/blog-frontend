@@ -1,7 +1,32 @@
 #posts-index img {
   width: 300px;
 }
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: gray;
+  
+}
 
 html {
   scroll-behavior: smooth;
+}
+header {
+   background-color: cyan;
+   padding: 5%;
+}
+header a {
+  color:black ;
+  margin: 10%;
+}
+header a:hover {
+background-color: orangered;
+border-radius: 70%;
+}
+footer {
+  background-color: cyan;
+  color: black;
+  text-align: center;
+  margin-top: 2em;
+
 }
