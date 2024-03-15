@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
-import axios from "axios";
-export function PostsNew() {
+export function PostsNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.post("http://localhost:3000/posts.json", params);
+    props.onCreatePost(params);
   };
   return (
     <div id="posts-new">
