@@ -22,6 +22,22 @@ export function Content() {
     setIsPostsShowVisible(true);
     setCurrentPosts(post);
   };
+  const handleUpdatePost = (id, params, successCallback) => {
+    console.log("handleUpdatePost", params);
+    axios.patch("http://localhost:3000/posts/${id.json", params).then((response) => {
+      setPosts(
+        posts.map((post) => {
+          if (post.id === response.data.id) {
+            return response.data;
+          } else {
+            return post;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
   const handleClose = () => {
     setIsPostsShowVisible(false);
   };
@@ -37,7 +53,7 @@ export function Content() {
       <button onClick={handleIndexPosts}>Load Posts</button>
       <PostsIndex posts={posts} onShowRecipe={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPosts} />
+        <PostsShow post={currentPosts} onUpdatePost={handleUpdatePost} />
       </Modal>
     </main>
   );
