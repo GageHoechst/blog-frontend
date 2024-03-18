@@ -6,6 +6,9 @@ export function PostsShow(props) {
     const params = new FormData(event.target);
     props.onUpdatePost(props.post.id, params, () => event.target.reset());
   };
+  const handleClick = () => {
+    props.onDestroyPost(props.post.id);
+  };
   return (
     <div id="posts-show">
       <h2>{currentPosts.title}</h2>
@@ -18,6 +21,7 @@ export function PostsShow(props) {
         Body: <input defaultValue={props.post.body} name="body" type="text" />
         <button type="submit">Update post</button>
       </form>
+      <button onClick={handleClick}>Destroy post</button>
     </div>
   );
 }

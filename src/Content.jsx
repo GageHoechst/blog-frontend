@@ -38,6 +38,13 @@ export function Content() {
       handleClose();
     });
   };
+  const handleDestroyPost = (id) => {
+    console.log("handleDestoryPost", id);
+    axios.delete(`http://localhost:3000/posts/${id}.json`).then((response) => {
+      setPosts(posts.filter((post) => post.id !== id));
+      handleClose();
+    });
+  };
   const handleClose = () => {
     setIsPostsShowVisible(false);
   };
