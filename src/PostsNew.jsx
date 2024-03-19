@@ -11,15 +11,17 @@ export function PostsNew(props) {
       <h1>New post</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Title: <input name="title" type="text" />
+          Title: <input className="form-control" type="text" />
         </div>
         <div>
-          Body: <input name="Body" type="text" />
+          Body: <input className="form-control" type="text" />
         </div>
         <div>
-          Image: <input name="Image" type="text" />
+          Image: <input className="form-control" type="text" />
         </div>
-        <button type="submit">Create Post</button>
+        <button className="btn btn-outline-success" type="submit">
+          Create Post
+        </button>
       </form>
     </div>
   );

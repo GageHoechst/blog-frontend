@@ -56,12 +56,14 @@ export function Content() {
   useEffect(handleIndexPosts, []);
   return (
     <main>
-      <PostsNew onCreatePost={handleCreatePost} />
-      <button onClick={handleIndexPosts}>Load Posts</button>
-      <PostsIndex posts={posts} onShowRecipe={handleShowPost} />
-      <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPosts} onUpdatePost={handleUpdatePost} />
-      </Modal>
+      <div className="container">
+        <PostsNew onCreatePost={handleCreatePost} />
+        <button onClick={handleIndexPosts}>Load Posts</button>
+        <PostsIndex posts={posts} onShowRecipe={handleShowPost} />
+        <Modal show={isPostsShowVisible} onClose={handleClose}>
+          <PostsShow post={currentPosts} onUpdatePost={handleUpdatePost} />
+        </Modal>
+      </div>
     </main>
   );
 }
