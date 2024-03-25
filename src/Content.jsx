@@ -8,6 +8,7 @@ import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import { PostsShow } from "./PostsShow";
 import { Signup } from "./Signup";
+import { Login } from "./Login";
 export function Content() {
   const [posts, setPosts] = useState([]);
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
@@ -59,6 +60,7 @@ export function Content() {
     <main>
       <div className="container">
         <Signup />
+        <Login />
         <PostsNew onCreatePost={handleCreatePost} />
         <button onClick={handleIndexPosts}>Load Posts</button>
         <PostsIndex posts={posts} onShowRecipe={handleShowPost} />
