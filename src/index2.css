@@ -1,0 +1,38 @@
+#posts-index img {
+  width: 300px;
+}
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2em;
+  background-color: cyan;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+header {
+   background-color: cyan;
+   padding: 5%;
+}
+header a {
+  color:black ;
+  margin: 10%;
+}
+header a:hover {
+background-color: orangered;
+border-radius: 70%;
+}
+footer {
+  background-color: cyan;
+  color: black;
+  text-align: center;
+  margin-top: 2em;
+
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+
+}
