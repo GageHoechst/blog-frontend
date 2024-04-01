@@ -25,14 +25,14 @@ export function Header() {
                   <Link to="/signup">Signup</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#posts-index">
+                  <Link className="nav-link" to="/">
                     All Posts
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#posts-new">
+                  <Link className="nav-link" to="/posts/new">
                     New Post
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link disabled">Disabled</a>

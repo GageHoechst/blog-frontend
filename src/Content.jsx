@@ -63,10 +63,11 @@ export function Content() {
     <main>
       <Routes>
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<LogoutLink />} />
+        <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
       </Routes>
       <div className="container">
-        <Login />
-        <LogoutLink />
         <PostsNew onCreatePost={handleCreatePost} />
         <button onClick={handleIndexPosts}>Load Posts</button>
         <PostsIndex posts={posts} onShowRecipe={handleShowPost} />
