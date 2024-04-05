@@ -4,9 +4,11 @@ import { useState } from "react";
 export function Signup() {
   const [errors, setErrors] = useState([]);
   const [name, setName] = useState("");
+  const [status, setStatus] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
+
     const params = new FormData(event.target);
     axios
       .post("http://localhost:3000/users.json", params)
@@ -18,12 +20,14 @@ export function Signup() {
       .catch((error) => {
         console.log(error.response.data.errors);
         setErrors(error.response.data.errors);
+        setStatus(error.response.status);
       });
   };
 
   return (
     <div id="signup">
       <h1>Signup</h1>
+      {status ? <img src={"https://http.cat/${status}"} /> : null}
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
